@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+
+article {
+  font-size: .5em;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  font-size: 2em;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+  padding: 1em;
+  margin: 0;
+}
+
+/* Main section with vertical layout */
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  background: transparent;
+}
+
+#aboutme {
+  grid-column: 1;
+  justify-self: start;
+  font-size: 0.5em;
+}
+
+#aboutme h1 {
+  margin: 0;
+  padding: 0.8em 1.5em;
+  white-space: nowrap;
+}
+
+#navlist {
+  grid-column: 2;
+  justify-self: end;
+}
+
+body > section > p > a {
+  font-style: italic;
+  font-weight: bold;
+  color: inherit;
+}
+
+p {
+  margin: 0.5em;
+}
+
+/* First column */
+#p1 {
+  grid-area: col1;
+  padding: 1em;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* Second column */
+#p2 {
+  grid-area: col2;
+  padding: 1em;
+  text-align: justify;
+  line-height: 1.5;
+}
+/* Third column */
+#p3 {
+  grid-area: col3;
+  padding: 1em;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  header {
+  width: 75%;
+   font-size: 1.5em;
+   margin: auto;
+   padding: auto;
+  }
+  #navlist a {
+    color: rgb(66, 66, 66);
+  }
+}
